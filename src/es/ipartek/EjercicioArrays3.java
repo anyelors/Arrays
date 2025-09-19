@@ -61,17 +61,15 @@ public class EjercicioArrays3 {
         }
 
         //Impresión
+        System.out.println();
         System.out.println("*** Array Original ***");
-        for (String nom : nombres) {
-            System.out.printf("[%s] ", nom);
-        }
-        System.out.println("\n*** Array con nombres mayor de 5 letras ***");
-        for (String nom : nombresMas5) {
-            System.out.printf("[%s] ", nom);
-        }
-        System.out.println("\n*** Array con nombres que empiezan con la letra A ***");
-        for (String nom : nombresA) {
-            System.out.printf("[%s] ", nom);
-        }
+        System.out.println(Arrays.toString(nombres));
+
+        System.out.println("*** Array con nombres mayor de 5 letras ***");
+        System.out.println(Arrays.toString(nombresMas5));
+
+        System.out.println("*** Array con nombres que empiezan con la letra A ***");
+        System.out.println(Arrays.toString(nombresA));
+
     }
 }
