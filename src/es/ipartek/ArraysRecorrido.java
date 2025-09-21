@@ -14,6 +14,7 @@ public class ArraysRecorrido {
             System.out.printf("Digite Nombre[%d]:",i);
             nombres[i] = scan.nextLine();
         }
+        scan.close();
 
         System.out.println();
 
