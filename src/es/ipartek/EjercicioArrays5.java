@@ -38,14 +38,14 @@ public class EjercicioArrays5 {
         return valor;
     }
 
-    public static int solicitarValor(int[] valores) {
+    public static int solicitarValor(int[] valores, int indx) {
         int valor = -1;
         boolean valorError = false;
         boolean valorExiste = false;
         Scanner scan = new Scanner(System.in);
 
         do {
-            System.out.printf("Introduzca valor entre 1 y 49: ");
+            System.out.printf("Introduzca valor entre 1 y 49 [%d]: ", indx+1);
 
             while (!scan.hasNextInt()) {
                 System.out.println("Entrada no válida. Por favor, introduce un número entre el 1 y el 49.");
@@ -103,10 +103,14 @@ public class EjercicioArrays5 {
             conbinacionGanadora[i] = generarValor(conbinacionGanadora);
         }
 
+        Arrays.sort(conbinacionGanadora);
+
         System.out.println("*** Introduzca Combinación Jugada ***");
         for (int i = 0; i < LIMIT; i++) {
-            conbinacionJugada[i] = solicitarValor(conbinacionJugada);
+            conbinacionJugada[i] = solicitarValor(conbinacionJugada, i);
         }
+
+        Arrays.sort(conbinacionJugada);
 
         System.out.println(Arrays.toString(conbinacionGanadora).indent(2));
         System.out.println(Arrays.toString(conbinacionJugada).indent(2));
