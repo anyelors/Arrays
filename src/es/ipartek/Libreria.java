@@ -4,8 +4,12 @@ import java.util.Arrays;
 
 public class Libreria {
 
-    //Retorna la primera posición del valor buscado
-    //si no existe -1
+    /**
+     * Busca la primera posicion de un valor en el array
+     * @param valores Array donde buscar el valor
+     * @param buscado Valor buscado
+     * @return posicion de la primera aparicion del valor en el array o -1 si no se encuentra
+     */
     public static int buscar ( int[] valores, int buscado) {
         int indx = -1;
 
@@ -18,7 +22,12 @@ public class Libreria {
         return indx;
     }
 
-    //Retorna true si el valor existe
+    /**
+     * Indica si el valor indicado está presente en el array
+     * @param valores Array donde comprobar si el valor existe
+     * @param buscado Valor buscado
+     * @return True si el valor buscado existe en el array, False en caso contrario.
+     */
     public static boolean existe ( int[] valores, int buscado) {
         /*
         boolean exist = false;
@@ -35,7 +44,12 @@ public class Libreria {
         return buscar(valores, buscado) >= 0;
     }
 
-    //Retorna el número de apariciones
+    /**
+     * Recuenta el n.º de apariciones del valor indicado en el array
+     * @param valores Array donde contabilizar las apariciones del valor
+     * @param buscado Valor a contabilizar
+     * @return Cantidad de apariciones del valor buscado
+     */
     public static int recuento ( int[] valores, int buscado) {
         int cont = 0;
         for (int i = 0; i < valores.length; i++) {
@@ -45,7 +59,11 @@ public class Libreria {
         return cont;
     }
 
-    //Retorna la posición del valor más grande presente en el array
+    /**
+     * Obtiene la posición del valor maximo presente en el array de enteros
+     * @param valores Array de valores
+     * @return Posicion del valor maximo
+     */
     public static int obtenerPosMaximo ( int [] valores ) {
         int max = valores[0];
         int indx = 0;
@@ -60,7 +78,11 @@ public class Libreria {
         return indx;
     }
 
-    //Retorna la posición del valor mínimo presente en el array
+    /**
+     * Obtiene la posicion del valor minimo presente en el array de enteros
+     * @param valores Array de valores
+     * @return Posicion del valor minimo
+     */
     public static int obtenerPosMinimo ( int [] valores) {
         int min = valores[0];
         int indx = 0;
@@ -75,6 +97,11 @@ public class Libreria {
         return indx;
     }
 
+    /**
+     * Invierte un Array de enteros
+     * @param valores Array de valores
+     * @return Un Array nuevo invertido
+     */
     public static int[] invertir ( int[] valores ) {
         int[] valoresInvertir = new int[valores.length];
         int indx = 0;
@@ -85,6 +112,36 @@ public class Libreria {
         }
 
         return valoresInvertir;
+    }
+
+    /**
+     * Calcula sumatoria de un array de valores
+     * @param valores Array de valores
+     * @return sumatoria
+     */
+    public static int calculoSumatoria ( int[] valores ) {
+        int sumatoria = 0;
+
+        for (Integer valor : valores){
+            sumatoria += valor;
+        }
+
+        return sumatoria;
+    }
+
+    /**
+     * Recuenta cantidad de valores mayor o igual al valor indicado en el array
+     * @param valores Array donde contabilizar las apariciones del valor
+     * @param buscado Valor a contabilizar
+     * @return Cantidad de apariciones del valor buscado
+     */
+    public static int recuentoMaxValor ( int[] valores, int valor) {
+        int cont = 0;
+        for (int i = 0; i < valores.length; i++) {
+            if (valores[i] >= valor)
+                cont++;
+        }
+        return cont;
     }
 
     public static void main(String[] args) {
